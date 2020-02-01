@@ -1,0 +1,162 @@
+
+
+
+ui = data + style + behavior
+
+
+web ui
+-------
+
+ data   ==> HTML elements
+ style  ==> CSS
+ behavior ==> javascript  ( ES6 )
+
+ ----------------------------------------------------
+ 
+what javascript language can do on HTML-page 
+in browser envi?
+
+using w3c standard web APIs, 
+javascript programs can do any dynamic actions on web-page
+within browser-envi
+
+w3c standard web APIs ==> DOM, XHR, Timer, ...
+
+imp-note:
+   all w3c standard APIs are implemented 
+   by browser vendors nativly,
+   and abstracted to us as javascript objects & functions 
+
+using DOM API
+--------------
+=> for page manipulation 
+ -> can create,retreive,update,delete HTML elements
+ -> can change element's inner text/html content 
+ -> can change element's attributes/properties
+ -> can change element's styles ( css )
+ -> can validate form-fields before submit to server-program
+
+using XHR / Fetch
+-------------------
+=> for Async communication with server-side programs
+
+using Timer API
+----------------
+=> to execute some action(s) on timeout/interval
+
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+
+
+limitations of plain-javascript ( your code) 
+with browser APIs
+-----------------------------------------------------------
+
+
+=>  browser compatability issues
+    - https://caniuse.com/
+=> memory management issues
+=> performance issues
+=> code organization is bad
+=> too much code
+
+
+legacy soln:
+--------------
+
+    => using server-side dynamic web pages
+
+        e.g jsp, asp.net , php ...
+
+
+ limitations on server-side page technologies:
+ ---------------------------------------------
+
+     =>  on every request, 
+         server-side programs must re-construct new-page,
+         with client prev state  
+
+     => on every request,
+        server always transfer same static resources with page,
+        will increase n/w b/w
+
+     => on every new page,
+        browser reloads existing page.  
+
+
+modern solution:
+
+      => using client-side page/ui technologies 
+
+      How ?
+
+      => new browser apis are introduced ( i.e HTML5 APIs)
+      => using advanced javascript syntax & apis
+
+      +
+
+      => using third-party's javascript lib & frameworks
+
+
+
+javascript utility lib
+-----------------------
+
+   1. jQuery
+
+      => DOM & XHR utility lib  
+
+       limitations on jquery
+
+            --> design & performance issues
+
+   
+   mvc based lib & F.W
+   --------------------------
+
+   1. backbone.js
+   2. knockout.js
+   3. ember.js
+   4. angular.js  ( popular )
+   ....         
+
+
+
+   limitation with MVC on UI-application
+
+   ==> un-predictable data flow b/w Model & View,
+       due to 2-way data-binding
+
+   ==> can't build re-usable UI fragments/components     
+
+
+
+   soln:
+
+   ==>  component based arch
+
+ 
+   how to development UI components ?
+
+
+      way-1 : using w3c standard apis 
+      --------------------------------
+
+         => HTML template
+         => shadow DOM
+         => custom elements
+
+
+      way-2 : using third party's js lib & F.Ws
+      ------------------------------------------
+
+         a. react.js from facebook  : v17 
+         b. angular                 : v8  ( our focus )
+         c. Vue
+         d. polymer.js
+         e. Ember.js
+         ...
+
+      -------------------------------------------   
