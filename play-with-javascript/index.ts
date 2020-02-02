@@ -1,3 +1,0 @@
-
-
-let myName: string="Nag"

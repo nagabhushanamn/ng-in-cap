@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-3 col-sm-3 col-md-3">
+        <img [src]="course.img_path" class="img-fluid" />
+    </div>
+    <div class="col-9 col-sm-9 col-md-9">
+        <h5 [innerText]="course.title"></h5>
+        <h6 [innerText]="course.price"></h6>
+        <button *ngIf="course.canBuy" (click)="handleBuy($event)" class="btn btn-sm btn-dark">
+            buy
+        </button>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a (click)="changeTab($event,'tab1')"
+                   class="nav-link"
+                   [class.active]="currentTab==='tab1'" 
+                   href>Description
+                </a>
+            </li>
+            <li class="nav-item">
+                <a (click)="changeTab($event,'tab2')" 
+                   [ngClass]="{'nav-link':true,active:currentTab==='tab2'}"
+                   href>Table of contents
+                </a>
+            </li>
+            <li class="nav-item">
+                <a (click)="changeTab($event,'tab3')"
+                [ngClass]="{'nav-link':true,active:currentTab==='tab3'}"
+                   href>Reviews
+                </a>
+            </li>
+        </ul>
+        <div *ngIf="currentTab==='tab1'">{{course.description}}</div>
+        <div *ngIf="currentTab==='tab2'">Not Yet</div>
+        <div *ngIf="currentTab==='tab3'">None Yet</div>
+    </div>
+</div>

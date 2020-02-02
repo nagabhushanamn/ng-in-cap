@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <hr />
+    <h1> UI comp arch</h1>
+    <hr />
+
+    <div id="box1" class="alert alert-danger">
+        <input id="inp1" type="number" onchange="handleChange(event)" />
+        <hr />
+        <span id="disp" class="badge badge-primary">0</span>
+    </div>
+
+    <script>
+
+        let inp1 = document.getElementById('inp1')
+        let count = 0;
+
+        setInterval(() => {
+            count++
+            inp1.value = count  // on state change, input component will re-render
+            inp1.dispatchEvent(new Event('change'))
+        }, 1000)
+
+        function handleChange(event) {
+            console.log(event)
+            let v = event.target.value;
+            document.getElementById('disp').innerText = v;
+        }
+
+    </script>
+
+</body>
+
+</html>

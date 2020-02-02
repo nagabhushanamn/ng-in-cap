@@ -137,7 +137,6 @@ javascript utility lib
 
    ==>  component based arch
 
- 
    how to development UI components ?
 
 
@@ -160,3 +159,141 @@ javascript utility lib
          ...
 
       -------------------------------------------   
+
+
+
+
+
+component arch in UI
+--------------------
+
+
+ in web-UI ,
+
+      what is component ?
+      -------------------
+
+        Independent UI-fragement with single-responsibility
+
+        e.g
+
+        Box, Searchbar, Navbar, Login , Product, ...
+
+
+
+        component's principles
+        ----------------------
+
+        =>  must have single-responsibility
+        =>  must be loosly coupled from other components
+        =>  can customizable via input properties/attributes
+            i.e parent-component can  customize child-component via props
+        =>  cannot change given input props
+        =>  can hold state/data if required ( statefull components)
+        =>  must re-render on state change / new props 
+        =>  data flow b/w components must be in uni-directional
+
+            i.e parent  --> child   via props/attributes
+                child   --> parent  via events
+
+
+          ---------------------------------------------------
+
+
+
+        is HTML element(s) follows component based arch ?  Yes
+
+
+        ==> HTML tag/element/component
+
+                i.e dom-element is individual component
+
+        ==> every html-tag/element/component
+            is an instance of HTMLXXXElement class
+
+         e.g
+            <div></div>  instanceof 'HTMLDivElement' class
+
+            i.e
+
+            HTMLDivElement      ==> HTML-component-class
+            <div></div>         ==> HTML-component-instance
+
+            HTMLInputElement    ==> HTML-component-class
+            <input/>            ==> HTML-component-instance
+
+
+
+        -------------------------------------
+        html-component properties/attributes
+        -------------------------------------
+
+
+        div component
+
+                - id
+                - class
+                - innerHTML
+
+        input component
+
+                - id 
+                - class
+                - type 
+
+        ......           
+
+
+
+
+        -------------------------------------
+        types of html-components
+        -------------------------------------
+
+
+        1. stateless components   e.g   <div>, <hr/>
+        2. statefull components   e.g   <input /> , <canvas> , <audio /> ...
+
+        imp-note :
+        
+          ==> when component's state changes, 
+              always will re-render
+
+
+
+                
+        -------------------------------------------------
+
+        in component based arch  
+                ==> uni-directional data-flow
+
+        parent --> child : data/props will go down
+        child  --> parent : action/event will come up
+
+        -------------------------------------------------
+
+        sometimes we need higher level UI components  ( web components )
+
+        e.g  Dialog,Datatable,Chart,.....
+
+
+        2 ways
+
+        way-1 : using w3c web component spec apis
+
+                - custome elements Api
+                - shadow dom Api
+                - Template Api
+
+        way-2 : using third party's lib and F.ws
+
+                - Angular
+                - React
+                ...
+
+        -------------------------------------------------------                
+
+
+
+
+

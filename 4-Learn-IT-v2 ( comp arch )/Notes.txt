@@ -1,0 +1,78 @@
+
+
+
+ NG core concepts
+ ----------------------
+
+ A.data binding
+ --------------
+
+  4 types 
+  --------
+
+    1. interpolation
+    ------------------
+
+      => to place any dynamic expression
+
+      syntax:
+      --------
+
+      in template,
+
+        {{expression}}   
+
+    2. property 
+    ------------
+
+      => to bind any data element/component property
+
+      syntax:
+      --------    
+
+      <element [property-name]="expression"/>
+
+    3. event 
+    ---------
+
+      syntax
+      --------
+
+      <element (event-name)="handler($event)"/>
+
+
+ A. directives
+ --------------
+
+  ==> instructions to render dynamic content on UI
+
+  3 types
+  ---------
+
+  a. component   = directive + template
+  ---------------------------------------
+
+      ==> always bring new UI fragment to UI
+
+      <component></component>
+
+  b. structural directive
+  ------------------------
+
+      ==> to change component's template structure
+
+      syntax:
+      --------
+
+      <element *directive="expression"/>
+
+  c. attribute directive
+  ------------------------
+
+    ==> to change element's attribute values
+
+      syntax
+      --------
+
+      <element [directive]="expression"/>
+

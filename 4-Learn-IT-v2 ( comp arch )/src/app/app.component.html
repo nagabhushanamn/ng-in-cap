@@ -1,0 +1,14 @@
+<div class="">
+
+    <app-navbar [title]="title"></app-navbar>
+
+    <hr />
+    <span class="badge badge-danger">{{cart.length}}</span> course(s) in cart
+    <hr />
+
+    <div class="list-group-item" *ngFor="let course of courses">
+        <app-course [value]="course" (buy)="addToCart($event)"></app-course>
+    </div>
+
+
+</div>
