@@ -3,8 +3,8 @@
         <img [src]="course.img_path" class="img-fluid" />
     </div>
     <div class="col-9 col-sm-9 col-md-9">
-        <h5 [innerText]="course.title"></h5>
-        <h6 [innerText]="course.price"></h6>
+        <h5>{{course.title}} <br/> <small style="font-size: 10px;">{{course.publish_date | date:'yyyy-MMM-dd'}}</small></h5>
+        <h6>{{course.price | priceDiscount: course.discount | currency : course.c_code }}</h6>
         <button *ngIf="course.canBuy" 
                (click)="handleBuy($event)" 
                class="btn btn-sm btn-dark">
@@ -31,7 +31,7 @@
                 </a>
             </li>
         </ul>
-        <div *ngIf="currentTab==='tab1'">{{course.description}}</div>
+        <div *ngIf="currentTab==='tab1'">{{course.description | slice:0:2000}}</div>
         <div *ngIf="currentTab==='tab2'">Not Yet</div>
         <div *ngIf="currentTab==='tab3'">None Yet</div>
     </div>
