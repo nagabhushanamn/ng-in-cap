@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-3 col-sm-3 col-md-3">
+        <img [src]="course.img_path" class="img-fluid" />
+    </div>
+    <div class="col-9 col-sm-9 col-md-9">
+        <h5>{{course.title}} <br /> <small style="font-size: 10px;">{{course.publish_date | date:'yyyy-MMM-dd'}}</small>
+        </h5>
+        <h6>{{course.price | priceDiscount: course.discount | currency : course.c_code }}</h6>
+        <button *ngIf="course.canBuy" (click)="handleBuy($event)" class="btn btn-sm btn-dark">
+            buy
+        </button>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a (click)="changeTab($event,'tab1')" class="nav-link" [class.active]="currentTab==='tab1'"
+                    href>Description
+                </a>
+            </li>
+            <li class="nav-item">
+                <a (click)="changeTab($event,'tab2')" [ngClass]="{'nav-link':true,active:currentTab==='tab2'}"
+                    href>Table of contents
+                </a>
+            </li>
+            <li class="nav-item">
+                <a (click)="changeTab($event,'tab3')" [ngClass]="{'nav-link':true,active:currentTab==='tab3'}"
+                    href>Reviews
+                </a>
+            </li>
+        </ul>
+        <div *ngIf="currentTab==='tab1'">{{course.description | slice:0:2000}}</div>
+        <div *ngIf="currentTab==='tab2'">Not Yet</div>
+        <div *ngIf="currentTab==='tab3'">
+            <div class="row" *ngFor="let review of reviews">
+                <div class="col-8 col-sm-8 col-md-8">
+                    <app-review [value]="review"></app-review>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-10 col-md-6">
+                    <app-review-form [submitProgress]="submitProgress" (save)="handleNewReview($event)">
+                    </app-review-form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

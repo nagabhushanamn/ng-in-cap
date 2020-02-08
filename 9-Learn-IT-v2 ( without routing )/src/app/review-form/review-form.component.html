@@ -1,0 +1,87 @@
+<button class="btn btn-sm btn-dark" (click)="toggleForm()" *ngIf="!isOpen"><i class="fa fa-plus"></i></button>
+<!-- 
+<hr />
+Form model
+<hr />
+<pre>
+    {{reviewForm.value|json}}
+</pre>
+
+<hr />
+Form status
+<hr />
+<pre>
+    is pristine : {{reviewForm.pristine}}
+    is dirty    : {{reviewForm.dirty}}
+
+    is untouched: {{reviewForm.untouched}}
+    is touched  : {{reviewForm.touched}}
+    
+    is valid  : {{reviewForm.valid}}
+    is invalid: {{reviewForm.invalid}}
+</pre>
+
+<hr />
+Form Control ( body) status
+<hr />
+<pre>
+    is pristine : {{reviewForm.get('body').pristine}}
+    is dirty    : {{reviewForm.get('body').dirty}}
+
+    is untouched: {{reviewForm.get('body').untouched}}
+    is touched  : {{reviewForm.get('body').touched}}
+    
+    is valid  : {{reviewForm.get('body').valid}}
+    is invalid: {{reviewForm.get('body').invalid}}
+</pre> -->
+
+<!-- 
+<hr />
+Form Control ( Author) status
+<hr />
+<pre>
+    is pristine : {{reviewForm.get('author').pristine}}
+    is dirty    : {{reviewForm.get('author').dirty}}
+
+    is untouched: {{reviewForm.get('author').untouched}}
+    is touched  : {{reviewForm.get('author').touched}}
+    
+    is valid  : {{reviewForm.get('author').valid}}
+    is invalid: {{reviewForm.get('author').invalid}}
+</pre> 
+-->
+
+<div class="card" *ngIf="isOpen">
+    <div class="card-header">Review Form</div>
+    <div class="card-body">
+        <form [formGroup]="reviewForm" (submit)="handleForm($event)">
+            <div class="form-group">
+                <label>Author</label>
+                <input formControlName="author" autofocus type="email" class="form-control" />
+                <!-- 
+                <div *ngIf="reviewForm.get('author').errors?.required && reviewForm.get('author').touched" class="text-danger">Author is required</div>       
+                <div *ngIf="reviewForm.get('author').errors?.email && reviewForm.get('author').touched" class="text-danger">Author must be Email</div>       
+                -->
+                <div class="text-danger">
+                    {{errorMessages.author}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Stars</label>
+                <select formControlName="stars" class="form-control">
+                    <option *ngFor="let n of [1,2,3,4,5]" [value]="n">{{n}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Body</label>
+                <textarea formControlName="body" class="form-control"></textarea>
+                <div class="text-danger">
+                    {{errorMessages.body}}
+                </div>
+            </div>
+            <button [disabled]="submitProgress" class="btn btn-primary">submit</button>
+            &nbsp;
+            <button type="button" (click)="toggleForm()" class="btn btn-danger">cancel</button>
+        </form>
+    </div>
+</div>

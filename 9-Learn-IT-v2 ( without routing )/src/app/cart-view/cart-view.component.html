@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header">Item(s) in cart</div>
+    <div class="card-body">
+        <table class="table table-sm table-bordered">
+            <tr *ngFor="let course of cart">
+                <td>{{course.id}}</td>
+                <td>{{course.title}}</td>
+                <td>{{course.price|currency:'INR'}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+    [
+        {
+            "author": "who@mail.com",
+            "stars": 5,
+            "body": "sample review-1"
+        },
+        {
+            "author": "who@mail.com",
+            "stars": 3,
+            "body": "sample review-2"
+        }
+    ]

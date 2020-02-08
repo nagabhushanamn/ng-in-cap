@@ -1,0 +1,5 @@
+<div class="card card-body">
+    <div class="list-group-item" *ngFor="let course of courses | slice : 0:100">
+        <app-course [value]="course"></app-course>
+    </div>
+</div>
