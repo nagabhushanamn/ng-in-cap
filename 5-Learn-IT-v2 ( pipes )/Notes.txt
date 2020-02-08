@@ -9,35 +9,25 @@
 
   4 types 
   --------
-
     1. interpolation
     ------------------
-
       => to place any dynamic expression
-
       syntax:
       --------
-
       in template,
-
         {{expression}}   
 
     2. property 
     ------------
-
       => to bind any data element/component property
-
       syntax:
       --------    
-
       <element [property-name]="expression"/>
 
     3. event 
     ---------
-
       syntax
       --------
-
       <element (event-name)="handler($event)"/>
 
 
@@ -77,18 +67,3 @@
       <element [directive]="expression"/>
 
 ---------------------------------------------------
-
-
-- component lifecycle methods
-- services
-- routing
-- forms
-- animation
-- http
-- Auth
-- change detection strategies ( Zones )
-- unit & e2e testing
-.......
-
-
-

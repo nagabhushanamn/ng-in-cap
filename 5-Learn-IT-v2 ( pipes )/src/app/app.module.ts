@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CourseComponent } from './course/course.component';
 import { CartBadgeComponent } from './cart-badge/cart-badge.component';
 import { PriceDiscountPipe } from './price-discount.pipe';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { PriceDiscountPipe } from './price-discount.pipe';
     NavbarComponent,
     CourseComponent,
     CartBadgeComponent,
-    PriceDiscountPipe
+    PriceDiscountPipe,
+    ReviewComponent
   ],
   imports: [
     BrowserModule
