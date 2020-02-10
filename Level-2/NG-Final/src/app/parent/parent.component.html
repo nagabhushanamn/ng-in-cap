@@ -1,0 +1,19 @@
+<div class="card card-body">
+
+    <span class="badge badge-dark">im parent</span>
+    <br />
+
+    <h4 #header>NG</h4>
+    <hr />
+
+    <ng-content></ng-content>
+
+    <br />
+
+    <app-child *ngIf="message<500" [message]="message">
+    </app-child>
+
+
+
+
+</div>

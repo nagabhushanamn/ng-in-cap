@@ -1,0 +1,36 @@
+<div class="card card-body">
+
+    <div *ngIf="courses.length===0">No courses</div>
+    <table *ngIf="courses.length!==0" class="table table-sm table-bordered">
+        <tr *ngFor="let course of courses">
+            <td>{{course.id}}</td>
+            <td><a routerLink="view/{{course.id}}">{{course.title}}</a></td>
+            <td>{{course.price|currency}}</td>
+            <td><a routerLink="edit/{{course.id}}"><i class="fa fa-edit"></i></a></td>
+            <td><a href (click)="deleteCourse($event,course.id)"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </table>
+    <hr />
+    <router-outlet></router-outlet>
+
+    <!-- 
+    <p-table [value]="courses">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-course>
+            <tr>
+                <td>{{course.id}}</td>
+                <td>{{course.title}}</td>
+                <td>{{course.price}}</td>
+            </tr>
+        </ng-template>
+    </p-table> 
+    -->
+
+
+</div>

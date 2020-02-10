@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-header">counter box : <span class="badge badge-dark">{{total}}</span></div>
+    <div class="card-body">
+        <app-action value="1" (kick)="doCount($event)">
+        </app-action>
+        <app-action value="-1" (kick)="doCount($event)">
+        </app-action>
+        <div style="clear: both;">
+            <hr />
+            <app-summary [value]="total"></app-summary>
+            <hr />
+        </div>
+    </div>
+</div>

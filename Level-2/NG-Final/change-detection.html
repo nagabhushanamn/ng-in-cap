@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+
+<body>
+
+    <hr />
+    <h1> change detection </h1>
+    <hr />
+
+    <button id="gm">GM</button>
+    <button id="gn">GN</button>
+    <button id="ge">GE</button>
+    <hr />
+    <div id="greet">
+
+    </div>
+
+    <script>
+
+        let gmBtn = document.getElementById("gm")
+        let gnBtn = document.getElementById("gn")
+        let geBtn = document.getElementById("ge")
+        let greetBox = document.getElementById("greet")
+
+        let message = "";
+        let newMessage = ""
+
+        gmBtn.addEventListener('click', e => {
+            newMessage = "good morning"
+            doChangeDetection();
+        })
+        gnBtn.addEventListener('click', e => {
+            newMessage = "good noon"
+            doChangeDetection();
+        })
+        geBtn.addEventListener('click', e => {
+            newMessage = "good evening"
+            doChangeDetection();
+        })
+
+        function doChangeDetection() {
+            console.log("change detection triggered...")
+            if (newMessage !== message) {
+                message = newMessage
+                greetBox.innerText = message
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

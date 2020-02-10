@@ -1,0 +1,12 @@
+<div class="card card-body">
+
+
+    <div>
+        <table class="table table-bordered">
+            <tr *ngFor="let todo of todos">
+                <app-todo [value]="todo"></app-todo>
+            </tr>
+        </table>
+    </div>
+
+</div>

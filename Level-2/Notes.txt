@@ -1,0 +1,9 @@
+
+
+- javascript async apis
+- routing
+
+- change detection strategies
+- component's lifecycle hooks
+- testing & deployement
+

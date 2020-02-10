@@ -1,0 +1,15 @@
+<hr />
+<button class="btn btn-primary" (click)="processWithinAngularZone()">
+    start progress ( in zone )
+</button>
+&mdash;
+<span class="badge badge-danger">{{progress1}}</span>
+
+
+<hr />
+
+<button class="btn btn-primary" (click)="processOutsideAngularZone()">
+    start progress ( outside zone )
+</button>
+&mdash;
+<span class="badge badge-danger">{{progress2}}</span>
